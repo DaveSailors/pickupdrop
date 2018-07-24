@@ -27,12 +27,12 @@ fswebcam -r 1280x720 $FILE
 open $NetSolHost
 user $NetSolDrop $NetSolType
 pwd
-ls -al
 passive
 !pwd
 bin
 put $FILE
 chmod 775 $FILE
+ls -al $FILE
 quit
 EOF
 
