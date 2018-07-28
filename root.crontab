@@ -1,0 +1,18 @@
+# Root Crontab
+#----------------------------------------------------------------------------
+#
+#
+# (1) Minute            : 0 through 59
+# (2) Hour              : 0 through 23
+# (3) Day of Month      : 1 through 31
+# (4) Month of Year     : 1 through 12
+# (5) Day of Week       : 0 through  6 (Sunday - Saturday)
+# (6) Shell command
+#
+#
+#----------------------------------------------------------------------------
+# - Check for low disk space
+#* * * * * echo 123 | mailx david.sailors@navis.com >/usr/local/syslog/dfcheck.pl 2>&1
+#
+* * * * * ~/gitstuff/pickupdrop/picture.sh >/tmp/crontab-test 2>&1
+15 * * * * /sbin/init 6 >/usr/local/syslog/init6.log  2>&1
