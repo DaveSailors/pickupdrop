@@ -10,8 +10,11 @@ MINUTE=$(date +%M)
 SECOND=$(date +%S)
 TSTAMP="$MONTH.$DAY.$YEAR-$HOUR.$MINUTE.$SECOND"
 
+PID=$$
+
 HOSTNAME=`hostname`;
-FILE=image.$TSTAMP.$HOSTNAME.jpg
+FILE=image.$TSTAMP.$HOSTNAME.$PID.jpg
+
 
 #------------------------------------------
 echo "$TSTAMP $0 running on $HOSTNAME"
@@ -21,7 +24,7 @@ echo "$TSTAMP $0 running on $HOSTNAME"
 #fswebcam -r 1280x720 image.$TSTAMP.$HOSTNAME.jpg
 fswebcam -r 1280x720 $FILE
 
-
+echo Pushing now
 
 /usr/bin/ftp -n <<EOF
 open $NetSolHost
