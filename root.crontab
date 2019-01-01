@@ -15,4 +15,5 @@
 #* * * * * echo 123 | mailx david.sailors@navis.com >/usr/local/syslog/dfcheck.pl 2>&1
 #
 * * * * * ~/gitstuff/pickupdrop/picture.sh >/tmp/crontab-test 2>&1
-15 * * * * /sbin/init 6 >/usr/local/syslog/init6.log  2>&1
+#* * * * * ~/gitstuff/pickupdrop/burst.pl >/tmp/crontab-test 2>&1
+#15 15 * * * /sbin/init 6 >/usr/local/syslog/init6.log  2>&1
